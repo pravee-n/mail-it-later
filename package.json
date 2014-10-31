@@ -1,0 +1,23 @@
+{
+  "name": "mail-it-later",
+  "version": "0.0.1",
+  "description": "Mail it later",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.10.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pravee-n/mail-it-later.git"
+  },
+  "author": "Praveen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pravee-n/mail-it-later/issues"
+  },
+  "homepage": "https://github.com/pravee-n/mail-it-later"
+}
