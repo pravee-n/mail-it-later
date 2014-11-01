@@ -4,7 +4,8 @@
   "description": "Mail it later",
   "main": "app.js",
   "dependencies": {
-    "express": "^4.10.1"
+    "express": "^4.10.1",
+    "pocket-api": "^0.2.2"
   },
   "devDependencies": {},
   "scripts": {

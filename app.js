@@ -11,6 +11,20 @@ app.get('/', function(req, res){
     // res.send('Hello World');
 });
 
+app.get('/authenticate', function(req, res) {
+    console.log( 'REACHED HERE' );
+    var token = pocket.getRequestToken( '34005-509b53b505bc9f4818042bc9' , function( data ) {
+        res.send( data );
+    });
+});
+
+
+
+var pocket = require('pocket-api')
+
+var consumer_key = 'your consumer_key';
+
+
 var server = app.listen(3000, function () {
 
   var host = server.address().address
