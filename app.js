@@ -11,6 +11,11 @@ app.get('/', function(req, res){
     // res.send('Hello World');
 });
 
+app.get('/auth', function(req, res){
+    res.sendfile(__dirname + '/public/auth.html');
+    // res.send('Hello World');
+});
+
 var server = app.listen(3000, function () {
 
   var host = server.address().address
