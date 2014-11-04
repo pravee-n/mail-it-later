@@ -4,19 +4,36 @@
 	<meta charset="UTF-8">
 	<title>Hello World</title>
     <link rel="stylesheet" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <div class="body-container">
-        <div class="background-container">
+        <div class="foreground-container">
+            <div class="page-title">Mail It Later</div>
+            <div class="page-desc">Connect your Pocket or Instapaper accounts to get a daily digest of stuff you save.</div>
+            <div class="page-form">
+                <input type="text" class="page-form-input" placeholder="Enter Your Email">
+                <div class="page-form-button js-contact-page-form-button">
+                    CONNECT
+                </div>
+            </div>
+        </div>
+        <form class="pocket-authentication-form js-pocket-authentication-form" action="https://getpocket.com/v3/oauth/request">
+            <input type="text" name="consumer_key" value="34005-509b53b505bc9f4818042bc9">
+            <input type="text" name="redirect_uri" value="readitlater.local:3000">
+        </form>
+        <div class="background-container js-dots-container">
             <li class="background-item js-background-item"></li>
             <li class="background-item js-background-item"></li>
             <li class="background-item js-background-item"></li>
             <li class="background-item js-background-item"></li>
             <li class="background-item js-background-item"></li>
         </div>
+
     </div>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="/please.js"></script>
     <script type="text/javascript" src="/main.js"></script>
 </body>
 </html>
