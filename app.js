@@ -15,6 +15,16 @@ var server = app.listen( 3000, function () {
   var host = server.address().address
   var port = server.address().port
 
+var nodemailer = require('nodemailer');
+var transporter = nodemailer.createTransport();
+transporter.sendMail({
+    from: 'ankurdnana@gmail.com',
+    to: 'drecodeam@gmail.com',
+    subject: 'hello',
+    text: 'hello world!'
+});
+
+
   console.log( 'Example app listening at http://%s:%s', host, port )
 
 })
