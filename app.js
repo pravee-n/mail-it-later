@@ -107,7 +107,7 @@ app.get('/getAccessToken', function (req, res) {
                         .complete(function(err, user) {
                             console.log('new user added successfully');
                         });
-
+        
                 } else {
                     console.log('updating');
                     user.access_token = data.access_token;
