@@ -6,6 +6,7 @@ var cookieParser = require('cookie-parser');
 
 // More dependencies required by the app
 var authRoutes = require('./routes/auth.js');
+var migrateRoutes = require('./routes/migrate.js');
 var Sequelize = require('sequelize');
 
 var app = express();
@@ -18,6 +19,7 @@ app.use(session({
     secret: 'shhhh, very secret'
 }));
 app.use('/', authRoutes);
+app.use('/', migrateRoutes);
 
 
 var server = app.listen(3000, function () {
@@ -42,30 +44,5 @@ sequelize
             console.log('Unable to connect to the database:', err);
         } else {
             console.log('Connection has been established successfully.');
-        }
-    });
-
-
-// Models
-var User = sequelize.define('User', {
-    username: Sequelize.STRING,
-    email: Sequelize.STRING,
-    password: Sequelize.STRING,
-    access_token: Sequelize.STRING,
-    request_token: Sequelize.STRING,
-}, {
-    createdAt: 'created_at',
-    updatedAt: 'updated_at'
-});
-
-
-// Synchronize database with models
-sequelize
-    .sync()
-    .complete(function(err) {
-        if (!!err) {
-            console.log('An error occurred while creating the table:', err);
-        } else {
-            console.log('It worked!');
         }
     });
