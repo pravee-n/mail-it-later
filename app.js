@@ -8,6 +8,7 @@ var cookieParser = require('cookie-parser');
 var authRoutes = require('./routes/auth.js');
 var migrateRoutes = require('./routes/migrate.js');
 var Sequelize = require('sequelize');
+var config = require('./config/config.js');
 
 var app = express();
 
@@ -22,7 +23,7 @@ app.use('/', authRoutes);
 app.use('/', migrateRoutes);
 
 
-var server = app.listen(3000, function () {
+var server = app.listen(config.server.port, function () {
   var host = server.address().address;
   var port = server.address().port;
   console.log('Example app listening at http://%s:%s', host, port);
@@ -30,9 +31,9 @@ var server = app.listen(3000, function () {
 
 
 // Data base settings
-var sequelize = new Sequelize('mail-it-later', 'root', 'root', {
+var sequelize = new Sequelize('mail-it-later', config.mysql.username, config.mysql.username, {
     dialect: "mysql", // or 'sqlite', 'postgres', 'mariadb'
-    port: 3306, // or 5432 (for postgres)
+    port: config.mysql.port, // or 5432 (for postgres)
 });
 
 
